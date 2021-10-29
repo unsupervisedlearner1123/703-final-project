@@ -1,0 +1,13 @@
+Option 1:
+Music Genre classification
+Challenges:
+Source corpus
+Across genres, lyrics could be similar
+Probability ranking model?
+ (Looking at the Million Song dataset, missing genre labels)
+
+Approach:
+Probabilistic Model - TF-IDF/NaiveBayes
+Neural Net
+
+Option 2:
