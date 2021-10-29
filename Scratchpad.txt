@@ -11,3 +11,7 @@ Probabilistic Model - TF-IDF/NaiveBayes
 Neural Net
 
 Option 2:
+Amazon Product reviews sentiment analysis
+Challenges:
+Finding tagged data
+Can we use sci-kit learn for sentiment analysis?
