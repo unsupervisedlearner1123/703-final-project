@@ -17,8 +17,12 @@ Finding tagged data
 Can we use sci-kit learn for sentiment analysis?
 
 Option 3:
-Movie Reivew sentiment analysis
+Movie Review sentiment analysis
 Challenges:
 Finding tagged data
 Can we use sci-kit learn for sentiment analysis?
 
+Option 3:
+Making new songs with RNN using chord progressions
+Challenges:
+Testing dataset?
