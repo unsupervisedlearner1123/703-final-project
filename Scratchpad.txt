@@ -22,7 +22,7 @@ Challenges:
 Finding tagged data
 Can we use sci-kit learn for sentiment analysis?
 
-Option 3:
+Option 4:
 Making new songs with RNN using chord progressions
 Challenges:
 Testing dataset?
