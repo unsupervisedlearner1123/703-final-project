@@ -1,6 +1,6 @@
 Option 1:
 Music Genre classification
-Challenges:
+Challenges: 
 Source corpus
 Across genres, lyrics could be similar
 Probability ranking model?
@@ -15,3 +15,10 @@ Amazon Product reviews sentiment analysis
 Challenges:
 Finding tagged data
 Can we use sci-kit learn for sentiment analysis?
+
+Option 3:
+Movie Reivew sentiment analysis
+Challenges:
+Finding tagged data
+Can we use sci-kit learn for sentiment analysis?
+
