@@ -26,3 +26,108 @@ Option 4: (scrapped)
 Making new songs with RNN using chord progressions
 Challenges:
 Testing dataset?
+
+
+
+
+
+1. Baseline:
+- max_len = 50 #since this is tweets ideally i think it should be low
+- num_words = 2000
+- Layers:
+    layer = Embedding(5000,400,input_length=max_len)(inputs) 
+    layer = LSTM(64)(layer) 
+    layer = Dense(256,name='FC1')(layer) 
+    layer = Activation('relu')(layer) 
+    layer = Dropout(0.5)(layer) 
+    layer = Dense(1,name='out_layer')(layer) 
+    layer = Activation('sigmoid')(layer)
+ - optimizer: Adam, learning rate=0.1
+ - batch_size=80, epochs=20
+ Results: loss: 0.4240 - accuracy: 0.7910 - val_loss: 0.7925 - val_accuracy: 0.6815
+
+2. 1 + SMALLER BATCH SIZE:
+- max_len = 50 #since this is tweets ideally i think it should be low
+- num_words = 2000
+- Layers:
+    layer = Embedding(5000,400,input_length=max_len)(inputs) 
+    layer = LSTM(64)(layer) 
+    layer = Dense(256,name='FC1')(layer) 
+    layer = Activation('relu')(layer) 
+    layer = Dropout(0.5)(layer) 
+    layer = Dense(1,name='out_layer')(layer) 
+    layer = Activation('sigmoid')(layer)
+ - optimizer: Adam, learning rate=0.1
+ - batch_size=64, epochs=20
+ Results: loss: 0.4352 - accuracy: 0.7866 - val_loss: 0.7811 - val_accuracy: 0.6736 // accuracy: 0.67
+ 
+ ------------- Retain Smaller Batch size --------------------
+ 
+ 3. 2 + More num_words 
+ 
+- max_len = 50 #since this is tweets ideally i think it should be low
+- num_words = 5000
+- Layers:
+    layer = Embedding(5000,400,input_length=max_len)(inputs) 
+    layer = LSTM(64)(layer) 
+    layer = Dense(256,name='FC1')(layer) 
+    layer = Activation('relu')(layer) 
+    layer = Dropout(0.5)(layer) 
+    layer = Dense(1,name='out_layer')(layer) 
+    layer = Activation('sigmoid')(layer)
+ - optimizer: Adam, learning rate=0.1
+ - batch_size=64, epochs=20
+ Results: loss: 0.3094 - accuracy: 0.8538 - val_loss: 1.1010 - val_accuracy: 0.6887 // accuracy: 0.6798
+ 
+ Push up num_words
+ 
+ 4. 3 + num_words + max_len
+- max_len = 40 #since this is tweets ideally i think it should be low
+- num_words = 6000
+- Layers:
+    layer = Embedding(5000,400,input_length=max_len)(inputs) 
+    layer = LSTM(64)(layer) 
+    layer = Dense(256,name='FC1')(layer) 
+    layer = Activation('relu')(layer) 
+    layer = Dropout(0.5)(layer) 
+    layer = Dense(1,name='out_layer')(layer) 
+    layer = Activation('sigmoid')(layer)
+ - optimizer: Adam, learning rate=0.1
+ - batch_size=64, epochs=20
+ Results: loss: 0.3189 - accuracy: 0.8503 - val_loss: 0.9991 - val_accuracy: 0.6725 // accuracy: 0.6770
+ 
+ Revert on num_words
+ 
+5. 3+ Smaller learning rate for Adam + smaller max_len
+ 
+- max_len = 30 #since this is tweets ideally i think it should be low
+- num_words = 5000
+- Layers:
+    layer = Embedding(5000,400,input_length=max_len)(inputs) 
+    layer = LSTM(64)(layer) 
+    layer = Dense(256,name='FC1')(layer) 
+    layer = Activation('relu')(layer) 
+    layer = Dropout(0.5)(layer) 
+    layer = Dense(1,name='out_layer')(layer) 
+    layer = Activation('sigmoid')(layer)
+ - optimizer: Adam, learning rate=0.005
+ - batch_size=64, epochs=20
+ Results: loss: 0.0819 - accuracy: 0.9618 - val_loss: 2.5265 - val_accuracy: 0.6596 // accuracy: 0.6806
+ 
+ 6. Going the article's way
+ 
+- max_len = 500
+- num_words = 5000
+- Layers:
+    layer = Embedding(5000,400,input_length=max_len)(inputs) 
+    layer = LSTM(64)(layer) 
+    layer = Dense(256,name='FC1')(layer) 
+    layer = Activation('relu')(layer) 
+    layer = Dropout(0.5)(layer) 
+    layer = Dense(1,name='out_layer')(layer) 
+    layer = Activation('sigmoid')(layer)
+ - optimizer: Adam, learning rate=0.005
+ - batch_size=64, epochs=20
+ 
+ 
+
