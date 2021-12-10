@@ -29,7 +29,7 @@ Testing dataset?
 
 
 
-
+---------------------------------------------------------------- NN TRAINING -----------------------------------------------------------
 
 1. Baseline:
 - max_len = 50 #since this is tweets ideally i think it should be low
@@ -112,14 +112,16 @@ Testing dataset?
     layer = Activation('sigmoid')(layer)
  - optimizer: Adam, learning rate=0.005
  - batch_size=64, epochs=20
- Results: loss: 0.0819 - accuracy: 0.9618 - val_loss: 2.5265 - val_accuracy: 0.6596 // accuracy: 0.6806
+ Results: loss: 0.0819 - accuracy: 0.9618 - val_loss: 2.5265 - val_accuracy: 0.6596 // accuracy: 0.6806 
+ 
+ I believe that training the external parameters, this is the best we can get (unless we add epochs..). Time to mess with the network.
  
  6. Going the article's way
  
 - max_len = 500
-- num_words = 5000
+- num_words = 2000
 - Layers:
-    layer = Embedding(5000,400,input_length=max_len)(inputs) 
+    layer = Embedding(2000,400,input_length=max_len)(inputs) 
     layer = LSTM(64)(layer) 
     layer = Dense(256,name='FC1')(layer) 
     layer = Activation('relu')(layer) 
