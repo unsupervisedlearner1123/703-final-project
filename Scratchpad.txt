@@ -132,4 +132,16 @@ Testing dataset?
  - batch_size=64, epochs=20
  
  
-
+ 6. 5 + removing dropout
+ 
+- max_len = 500
+- num_words = 2000
+- Layers:
+    layer = Embedding(2000,400,input_length=max_len)(inputs) 
+    layer = LSTM(64)(layer) 
+    layer = Dense(256,name='FC1')(layer) 
+    layer = Activation('relu')(layer) 
+    layer = Dense(1,name='out_layer')(layer) 
+    layer = Activation('sigmoid')(layer)
+ - optimizer: Adam, learning rate=0.005
+ - batch_size=64, epochs=20
