@@ -1,1 +1,1 @@
-This directory contains the intermediate iles created during the analysis.
+This directory contains the intermediate files created during the analysis.
