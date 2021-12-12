@@ -197,30 +197,30 @@ f = open("NB_vectorizer.pickle", "wb")
 pickle.dump(vec, f)
 f.close()
 
-"""Testing on synthetic data"""
+# """Testing on synthetic data"""
 
-# Loading saved vectorizer and classifier
-f = open("/content/NB_vectorizer.pickle", "rb")
-vec = pickle.load(f)
-f.close()
+# # Loading saved vectorizer and classifier
+# f = open("/content/NB_vectorizer.pickle", "rb")
+# vec = pickle.load(f)
+# f.close()
 
-f = open("/content/NB_classifier.pickle", "rb")
-clf = pickle.load(f)
-f.close()
+# f = open("/content/NB_classifier.pickle", "rb")
+# clf = pickle.load(f)
+# f.close()
 
-# Reading in synthetic data
+# # Reading in synthetic data
+# # df_synth = pd.read_csv(
+# #     io.StringIO(uploaded2["Synthetic_from_NB.csv"].decode("latin-1"))
+# # )
 # df_synth = pd.read_csv(
-#     io.StringIO(uploaded2["Synthetic_from_NB.csv"].decode("latin-1"))
+#     "./20_intermediate_files/Synthetic_from_NB.csv", encoding="latin-1"
 # )
-df_synth = pd.read_csv(
-    "./20_intermediate_files/Synthetic_from_NB.csv", encoding="latin-1"
-)
-df_synth.head()
+# df_synth.head()
 
-df_synth.info()
+# df_synth.info()
 
-synth_tfidf = vec.transform(df_synth["tweets"].values.astype("U"))
-predictions_synth = clf.predict(synth_tfidf)
-print("Accuracy ={:.2%}".format(clf.score(synth_tfidf, df_synth["labels"])))
+# synth_tfidf = vec.transform(df_synth["tweets"].values.astype("U"))
+# predictions_synth = clf.predict(synth_tfidf)
+# print("Accuracy ={:.2%}".format(clf.score(synth_tfidf, df_synth["labels"])))
 
-print(classification_report(df_synth["labels"], predictions_synth, digits=4))
+# print(classification_report(df_synth["labels"], predictions_synth, digits=4))
