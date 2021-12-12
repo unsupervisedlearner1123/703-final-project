@@ -1,0 +1,16 @@
+pandas
+numpy
+nltk
+re
+string
+pickle
+typing
+random
+io
+statistics
+scikit-learn
+time 
+spacy
+pathlib
+torch
+torchtext
